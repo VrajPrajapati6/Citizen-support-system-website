@@ -1,0 +1,268 @@
+<html>
+<head>
+    <title>My Account - Citizen Support</title>
+    <script>
+        function askfnc(){
+            var t = confirm("Are you want to logout?");
+
+            if(t){
+                window.location.href="1.html";
+            }
+        }
+        window.onload = function() {
+            const name = localStorage.getItem('usrname');
+            const em = localStorage.getItem('email');
+            const mob = localStorage.getItem('mbno');
+            const bd = localStorage.getItem('dob');
+            if(name) {
+                document.querySelector('.user h3').textContent = name;
+                document.getElementById('name').textContent = name;
+                document.getElementById('nm').textContent = name;
+            }
+            if(em) document.getElementById('em').textContent = em;
+            if(mob) document.getElementById('mob').textContent = mob;
+            if(bd) document.getElementById('bd').textContent = bd;
+        };
+    </script>
+    <style>
+        *{ margin:0; 
+            padding:0; 
+            font-family:arial, sans-serif; 
+        }
+        body{ background:#e7e7e9; }
+        .ct{ max-width:1000px; 
+            margin:auto; 
+            padding:20px; 
+        }
+        .hd{ 
+            background:#2d3e4f; 
+            color:#fff; 
+            padding:15px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            height: 60px;
+        }
+        .lnk {
+            display: flex;
+            gap: 20px;
+        }
+        .lnk a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .lnk a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .titl{ font-size:24px; font-weight:bold; }
+    
+        .main {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .side {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .user{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .list{
+            list-style: none;
+        }
+        .list li{
+            margin-bottom: 10px;
+        }
+        .list a{
+            display: block;
+            padding: 8px 10px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .list a:hover, .list a.active {
+            background: #f0f0f0;
+            color: #2d3e4f;
+        }
+        .cnt {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .top{
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .top h2{
+            color: #2d3e4f;
+            margin-bottom: 5px;
+        }
+        .top p{
+            color: #666;
+        }
+        .info{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .crd{
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2d3e4f;
+        }
+        .crd h3 {
+            color: #2d3e4f;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .itm {
+            margin-bottom: 15px;
+        }
+        .itm label {
+            display: block;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .itm p {
+            font-weight: bold;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            background: #2d3e4f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+        .btn:hover {
+            background: #3d4e5f;
+        }
+        .ft {
+            text-align: center;
+            padding: 20px;
+            background: #2d3e4f;
+            color: white;
+            margin-top: 40px;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hd">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="Logo" class="logo">
+            <div class="titl">Citizen Support System</div>
+        </div>
+        <div class="lnk">
+            <a href="3.html">Home</a>
+            <a href="7.myrep.html">Reports</a>
+            <a href="6.news.html">News</a>
+            <a href="5.myacc.html" class="active">My Account</a>
+        </div>
+    </div>
+    
+    <div class="ct">
+        <div class="main">
+            <div class="side">
+                <div class="user">
+                    <h3 style="color: #2d3e4f;">username</h3>
+                    <br>
+                    <p style="color:gray">Registered Citizen</p>
+                </div>
+                <ul class="list">
+                    <li><a href="3.html">Dashboard</a></li>
+                    <li><a href="7.myrep.html">My Reports</a></li>
+                    <li><a href="4.report.html">Submit New Report</a></li>
+                    <li><a href="5.myacc.html" class="active">Account Settings</a></li>
+                    <li><a href="">Help & Support</a></li>
+                    <li><a href="#" onclick="askfnc()">Logout</a></li>
+                </ul>
+            </div>
+            
+            <div class="cnt">
+                <div class="top">
+                    <div>
+                        <h2 id="name">User</h2>
+                        <p>Registered Citizen</p>
+                    </div>
+                </div>
+                
+                <div class="info">
+                    <div class="crd">
+                        <h3>Personal</h3>
+                        <div class="itm">
+                            <label>Name</label>
+                            <p id="nm">User</p>
+                        </div>
+                        <div class="itm">
+                            <label>Birth Date</label>
+                            <p id="bd">Not provided</p>
+                        </div>
+                    </div>
+                    
+                    <div class="crd">
+                        <h3>Contact</h3>
+                        <div class="itm">
+                            <label>Email</label>
+                            <p id="em">Not provided</p>
+                        </div>
+                        <div class="itm">
+                            <label>Mobile</label>
+                            <p id="mob">Not provided</p>
+                        </div>
+                    </div>
+                    
+                    <div class="crd">
+                        <h3>Security</h3>
+                        <div class="itm">
+                            <label>Password</label>
+                            <p>••••••••••</p>
+                        </div>
+                        <div class="itm">
+                            <label>Last Login</label>
+                            <p>Today</p>
+                        </div>
+                    </div>
+                    
+                    <div class="crd">
+                        <h3>Activity</h3>
+                        <div class="itm">
+                            <label>Reports</label>
+                            <p>5</p>
+                        </div>
+                        <div class="itm">
+                            <label>Resolved</label>
+                            <p>2</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ft">
+        <p>&copy; 2025 Citizen Support System</p>
+    </div>
+</body>
+</html>

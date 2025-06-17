@@ -1,0 +1,212 @@
+<html>
+<head>
+    <title>Citizen Support</title>
+    <script>
+        function opnregi() {
+            window.location.href = "2.html"; 
+        }
+    </script>
+    <style>
+        *{ margin:0; 
+            padding:0; 
+            font-family:Arial, sans-serif; 
+        }
+        body{ background:#e7e7e9; }
+        
+        .ct{ max-width:1000px; 
+            margin:0 auto; 
+            padding:20px; 
+        }
+        
+        .hd{ background:#2d3e4f; 
+            color:#fff; 
+            padding:15px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lgimg {height: 80px;
+            position: absolute;
+            left: 20px;
+        }
+        .hc {
+            text-align: center;
+        }
+        .lg{ font-size:32px; 
+            font-weight:bold; 
+            margin-bottom:5px; 
+        }
+        .tt { font-size:18px; 
+            opacity:0.9; 
+        }
+        
+        .hp { text-align:center; 
+            padding:50px 20px; 
+            background:rgb(35, 101, 172);
+            color:#fff; 
+            border-radius:8px; 
+            margin:20px 0; 
+        }
+        .hp h1 { font-size:40px; 
+            margin-bottom:20px; 
+        }
+        .hp p { font-size:18px; 
+            max-width:700px;
+             margin:0 auto 30px; 
+        }
+        
+        .btn { display:inline-block; 
+            background:#fff; 
+            color:#2c3e50; 
+            padding:12px 30px;
+            border-radius:50px; 
+            text-decoration:none;
+            font-size:18px; 
+            font-weight:bold; 
+            transition:all 0.3s ease; 
+        }
+        .btn:hover { background:#f1f1f1; 
+            transform:translateY(-3px); 
+            box-shadow:0 5px 15px rgba(0,0,0,0.1); 
+        }
+        
+        .sec { padding:40px 20px; 
+            margin:30px 0; 
+            background:#fff; 
+            border-radius:8px; 
+            box-shadow:0 3px 10px rgba(0,0,0,0.1); 
+        }
+        .sec h2 { color:#2c3e50; 
+            margin-bottom:20px; 
+            text-align:center; 
+            font-size:30px; 
+        }
+        .sec p { margin-bottom:15px; 
+            font-size:18px; 
+        }
+        .grd { display:grid; 
+            grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); 
+            gap:25px; 
+            margin-top:30px; 
+        }
+        .grd-sm { grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); 
+            gap:20px; 
+        }
+        .card { padding:20px; 
+            background:#f8f9fa; 
+            border-radius:8px; 
+            border-left:4px solid #3498db; 
+        }
+        .card h3 { color:#2c3e50; 
+            margin-bottom:10px; 
+        }
+
+        .wk { border:1px solid #eee; 
+            border-radius:8px; 
+            overflow:hidden; 
+        }
+        .wk img { width:100%; 
+            height:180px; 
+            object-fit:cover; 
+        }
+        .wk-ct { padding:15px; }
+        
+        .ft { text-align:center; 
+            padding:30px; 
+            background:#2c3e50; 
+            color:#fff; 
+            margin-top:50px; 
+        }
+        .lgn { text-align:center; 
+            margin:40px 0; 
+        }
+        .vobx{background: white;
+            color: grey;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="hd">
+        <img src="logo.png" alt="Logo" class="lgimg">
+        <div class="hc">
+            <div class="lg">Citizen Support System</div>
+            <div class="tt">Your Community Platform</div>
+        </div>
+    </div>
+    <div class="vobx">Your Voice Matters</div>
+    
+    <div class="ct">
+        <div class="hp">
+            <h1>Report Government Issues</h1>
+            <p>Help to improve public services by reporting to government.</p>
+            <a href="#login" class="btn">Get Started</a>
+        </div>
+        
+        <div class="sec">
+            <h2>About Our Platform</h2>
+            <p>Bridge between citizens and government to report service issues efficiently.</p>
+            <p>Report infrastructure, utilities, sanitation and other public service problems.</p>
+        </div>
+        
+        <div class="sec">
+            <h2>Benefits</h2>
+            <div class="grd">
+                <div class="card">
+                    <h3>Easy Reporting</h3>
+                    <p>Submit issues with photos and location quickly.</p>
+                </div>
+                <div class="card">
+                    <h3>Transparent</h3>
+                    <p>Track your report status and actions taken.</p>
+                </div>
+                <div class="card">
+                    <h3>Community Impact</h3>
+                    <p>See how your reports improve services for all.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sec">
+            <h2>Our Works</h2>
+            <p>Examples of resolved issues through our platform:</p>
+            <div class="grd grd-sm">
+                <div class="wk">
+                    <img src="road.jpg" alt="Road Repair">
+                    <div class="wk-ct">
+                        <h3>Pothole Repairs</h3>
+                        <p>200+ road defects fixed in 6 months</p>
+                    </div>
+                </div>
+                <div class="wk">
+                    <img src="water.jpg" alt="Water Supply">
+                    <div class="wk-ct">
+                        <h3>Water Supply</h3>
+                        <p>85% leaks fixed within 72 hours</p>
+                    </div>
+                </div>
+                <div class="wk">
+                    <img src="waste.jpg" alt="Sanitation">
+                    <div class="wk-ct">
+                        <h3>Waste Management</h3>
+                        <p>150+ garbage points cleared</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="lgn" id="login">
+            <h2>Ready to Help.</h2>
+            <br>
+            <a href="#" class="btn" onclick="opnregi()">Login / Register</a>
+        </div>
+    </div>
+    
+    <div class="ft">
+        <p>&copy; 2025 Citizen Support System with copyrights</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<html>
+<head>
+    <title>News</title>
+    <style>
+        *{ margin:0; 
+            padding:0; 
+            font-family:arial, sans-serif; 
+        }
+        body{ background:#e7e7e9; }
+        .bx{ max-width:1000px; 
+            margin:auto; 
+            padding:20px; 
+        }
+        .top{ 
+            background:#2d3e4f; 
+            color:#fff; 
+            padding:15px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .pic {
+            height: 60px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .head{ font-size:24px; font-weight:bold; }
+        
+        .news {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .news h1 {
+            color: #2d3e4f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .itm {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        .itm:last-child {
+            border-bottom: none;
+        }
+        .itm h2 {
+            color: #2d3e4f;
+            margin-bottom: 8px;
+        }
+        .dt {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+        .itm img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .bot {
+            text-align: center;
+            padding: 20px;
+            background: #2d3e4f;
+            color: white;
+            margin-top: 40px;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="Logo" class="pic">
+            <div class="head">Citizen Support</div>
+        </div>
+        <div class="nav">
+            <a href="3.html">Home</a>
+            <a href="7.myrep.html">Reports</a>
+            <a href="6.news.html" class="active">News</a>
+            <a href="5.myacc.html">My Account</a>
+        </div>
+    </div>
+    
+    <div class="bx">
+        <div class="news">
+            <h1>Community News</h1><hr>
+            
+            <div class="itm"><br>
+                <h2>New Road Opening at koba circle</h2>
+                <div class="dt">may 15, 2025</div>
+                <img src="koba.jpeg" alt="road">
+                <p>New road is opened just above from the koba circle. Because of lots of traffic around koba circle, the Amc decided to opened a new road.</p>
+            </div>
+            
+            <div class="itm">
+                <h2>Road Repairs at zundal</h2>
+                <div class="dt">may 12, 2025</div>
+                <img src="zunroad.png" alt="gandhi">
+                <p>Updated schedule for road repairs in zundal underbridge is released. Beacuse of lots of traffic in zundal there is an rquirement of road repairs at there.</p>
+            </div>
+            
+            <div class="itm">
+                <h2>Cleanup Success at sabaramati</h2>
+                <div class="dt">dec 25, 2024</div>
+                <img src="clean.png" alt="cleanup">
+                <p>200 volunteers collected 2 tons of trash.</p>
+            </div>
+            
+            <div class="itm">
+                <h2>Recycling Program</h2>
+                <div class="dt">feb 8, 2025</div>
+                <img src="ewaste.png" alt="ewaste">
+                <p>New program accepts more plastics and ewaste.</p>
+            </div>
+            
+            <div class="itm">
+                <h2>Library Hours at vastral</h2>
+                <div class="dt">jan 23, 2025</div>
+                <img src="library.png" alt="library">
+                <p>new update at vastral library about timeslot.library will also open sunday upto 2am.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bot">
+        <p>&copy; 2025 citizen support</p>
+    </div>
+</body>
+</html>

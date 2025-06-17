@@ -1,0 +1,223 @@
+
+<html>
+<head>
+    <title>Report</title>
+    <script>
+        function valpin(n){
+          const r=/^\d{6}$/;
+          return r.test(n);
+        }
+        function valfnc(e){
+            e.preventDefault();
+            const n = document.getElementById('pin').value.trim();
+            document.getElementById('perr').textContent = '';
+            
+            let ok = true;
+
+            if(!valpin(n)){
+                document.getElementById('perr').textContent = 'must contain exact 6 digits';
+                ok = false;
+            }
+
+            if(ok){
+                alert('Reported successfully!'); 
+                window.location.href='3.html';
+            }
+            return ok;
+        }
+    </script>
+    <style>
+        *{ margin:0; 
+            padding:0; 
+            font-family:arial, sans-serif; 
+        }
+        body{ background:#e7e7e9; }
+        .c{ max-width:1000px; margin:auto; padding:20px; }
+        
+        .h{ 
+            background:#2d3e4f; 
+            color:#fff; 
+            padding:15px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .i {
+            height: 60px;
+        }
+        .n {
+            display: flex;
+            gap: 20px;
+        }
+        .n a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .n a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .t{ font-size:24px; font-weight:bold; }
+        
+        .f {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .f h1 {
+            color: #2d3e4f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .r {
+            margin-bottom: 15px;
+        }
+        .r label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .r input, .r select, .r textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .r textarea{
+            height: 100px;
+        }
+        .b {
+            background: #2d3e4f;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .b:hover{
+            background: #3d4e5f;
+        }
+        .ft{
+            text-align: center;
+            padding: 20px;
+            background: #2d3e4f;
+            color: white;
+            margin-top: 40px;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="h">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="logo" class="i">
+            <div class="t">Citizen Support</div>
+        </div>
+        <div class="n">
+            <a href="3.html">Home</a>
+            <a href="7.myrep.html" class="active">Reports</a>
+            <a href="6.news.html">News</a>
+            <a href="5.myacc.html">My Account</a>
+        </div>
+    </div>
+    
+    <div class="c">
+        <div class="f">
+            <h1>Submit Report</h1><hr>
+            <form name="reportfrm" onsubmit="return valfnc(event)" method="post">
+                <br>
+                <div class="r">
+                    <label>Issue Type</label>
+                    <select required>
+                        <option>Road</option>
+                        <option>Traffic</option>
+                        <option>Water</option>
+                        <option>Garbage</option>
+                        <option>Electricity</option>
+                        <option>other</option>
+                    </select>
+                </div>
+                
+                <div class="r">
+                    <label>Location</label>
+                    <textarea placeholder="Proper Address" required></textarea>
+                </div>
+                
+                <div class="r">
+                    <label>Description</label>
+                    <textarea placeholder="Describe Issue" required></textarea>
+                </div>
+                
+                <div class="r">
+                    <label>Upload Image</label>
+                    <input type="file" accept="image/*" required>
+                </div>
+                
+                <div class="r">
+                    <label>Select City</label>
+                    <input list="cities" id="city" name="city" required>
+                    <datalist id="cities">
+                        <option value="Ahmedabad">
+                        <option value="Gandhinagar">
+                        <option value="Bangalore">
+                        <option value="Chennai">
+                        <option value="Delhi">
+                        <option value="Hyderabad">
+                        <option value="Indore">
+                        <option value="Jaipur">
+                        <option value="Kolkata">
+                        <option value="Lucknow">
+                        <option value="Mumbai">
+                        <option value="Nagpur">
+                        <option value="Pune">
+                        <option value="Surat">
+                        <option value="Vadodara">
+                    </datalist>
+                </div>
+                
+                <div class="r">
+                    <label>Select State</label>
+                    <input list="states" id="state" name="state" required>
+                    <datalist id="states">
+                        <option value="Andhra Pradesh">
+                        <option value="Assam">
+                        <option value="Bihar">
+                        <option value="Goa">
+                        <option value="Gujarat">
+                        <option value="Karnataka">
+                        <option value="Kerala">
+                        <option value="Maharashtra">
+                        <option value="Manipur">
+                        <option value="Nagaland">
+                        <option value="Odisha">
+                        <option value="Punjab">
+                        <option value="Rajasthan">
+                        <option value="Sikkim">
+                        <option value="Tamil Nadu">
+                        <option value="Telangana">
+                        <option value="Uttar Pradesh">
+                        <option value="Uttarakhand">
+                        <option value="West Bengal">
+                    </datalist>
+                </div>
+                <div class="r">
+                    <label for="pincode">Pincode</label>
+                    <input type="number" id="pin" required>
+                    <div id="perr" style="color:red; font-size: small;"></div>
+                </div>
+                
+                <button class="b">submit</button>
+            </form>
+        </div>
+    </div>
+            
+    <div class="ft">
+        <p>&copy; 2025 Citizen Support System with copyrights</p>
+    </div>
+</body>
+</html>

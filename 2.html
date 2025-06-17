@@ -1,0 +1,265 @@
+<html>
+<head>
+    <title>Registration Page</title>
+    <script>
+      function chkname(n){
+        const r=/^[A-Z a-z\s]+$/;
+        return r.test(n);
+       }
+      function chkpass(p) {
+          const r = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+          return r.test(p);
+      }
+
+      function chkemail(e) {
+          const r = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return r.test(e);
+      }
+
+      function chkmobile(m) {
+          const r = /^\d{10}$/;
+          return r.test(m);
+      }
+
+      function chkdate(d) {
+            if (!d.includes("/")) return false;
+            const r = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/;
+            if (!r.test(d)) return false;
+            
+            const [day, mon, year] = d.split("/").map(Number);
+            const date = new Date(year, mon - 1, day);
+            const today = new Date();
+        
+            if (date > today) {
+                return false;
+            }
+        
+            return date.getFullYear() === year && 
+                   date.getMonth() + 1 === mon && 
+                   date.getDate() === day;
+        }
+
+      function chkform(e) {
+          e.preventDefault();
+          const n = document.getElementById('name').value.trim();
+          const em = document.getElementById('email').value.trim();
+          const m = document.getElementById('mobile').value.trim();
+          const d = document.getElementById('dob').value;
+          const p = document.getElementById('pass').value.trim();
+          const cp = document.getElementById('cpass').value.trim();
+
+          document.getElementById('nerr').textContent = '';
+          document.getElementById('eerr').textContent = '';
+          document.getElementById('merr').textContent = '';
+          document.getElementById('derr').textContent = '';
+          document.getElementById('perr').textContent = '';
+          document.getElementById('cperr').textContent = '';
+
+          let ok = true;
+
+          if (!n) {
+              document.getElementById('nerr').textContent = 'Name needed';
+              ok = false;
+          } else if (!chkname(n)) {
+              document.getElementById('nerr').textContent = 'Only letters and spaces';
+              ok = false;
+          }
+
+          if (!em) {
+              document.getElementById('eerr').textContent = 'Email needed';
+              ok = false;
+          } else if (!chkemail(em)) {
+              document.getElementById('eerr').textContent = 'Invalid email';
+              ok = false;
+          }
+
+          if (!m) {
+              document.getElementById('merr').textContent = 'Mobile needed';
+              ok = false;
+          } else if (!chkmobile(m)) {
+              document.getElementById('merr').textContent = 'Need 10 digits';
+              ok = false;
+          }
+
+          if (!d) {
+              document.getElementById('derr').textContent = 'Date needed';
+              ok = false;
+          } else if (!chkdate(d)) {
+              document.getElementById('derr').textContent = 'Use DD/MM/YYYY';
+              ok = false;
+          }
+
+          if (!p) {
+              document.getElementById('perr').textContent = 'Password needed';
+              ok = false;
+          } else if (p.length < 8 || !chkpass(p)) {
+              document.getElementById('perr').textContent = 'minimum 8 char with lowercase, uppercase and digit';
+              ok = false;
+          }
+
+          if (!cp) {
+              document.getElementById('cperr').textContent = 'Confirm password';
+              ok = false;
+          } else if (cp !== p) {
+              document.getElementById('cperr').textContent = 'Passwords dont match';
+              ok = false;
+          }
+
+          if(ok){
+
+              localStorage.setItem('usrname', n );
+              localStorage.setItem('email', em);
+              localStorage.setItem('mbno', m );
+              localStorage.setItem('dob', d );
+
+
+              alert('Registration successful!'); 
+              window.open('3.html', '_blank');
+              document.regform.submit(); 
+            }
+          return ok;
+        }
+    </script>
+    <style>
+        *{ margin:0; 
+            padding:0; 
+            box-sizing:border-box; 
+        }
+        body { font-family:arial,sans-serif; 
+            background:#f4f4f4; 
+        }
+        
+        .hd{ background:#2d3e4f; 
+            color:#fff; 
+            padding:15px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lgimg {height: 80px;
+            position: absolute;
+            left: 20px;
+        }
+        .hc {
+            text-align: center;
+        }
+        .lg{ font-size:32px; 
+            font-weight:bold; 
+            margin-bottom:5px; 
+        }
+        .tt { font-size:18px; 
+            opacity:0.9; 
+        }
+        .ct{ max-width:1000px; 
+            margin:0 auto; 
+            padding:20px; 
+        }
+        .regform { 
+            background:#fff; 
+            padding:20px; 
+            border-radius:5px; 
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+            width:100%;
+            max-width:400px;
+            margin:0 auto;
+        }
+        .regform h2{ text-align:center; 
+            margin-bottom:15px; 
+        }
+        .regform hr{ margin-bottom:15px; 
+        }
+        .fg { margin-bottom:12px; }
+        .fg label{display:block; 
+            margin-bottom:3px; 
+            font-weight:bold; 
+        }
+        .fg input { 
+            width:100%; 
+            padding:8px; 
+            border:1px solid #ddd; 
+            border-radius:3px; 
+        }
+        .fg input:focus { border-color:#2c3e50; outline:none; }
+        
+        .err { color:red; font-size:12px; margin-top:3px; }
+        
+        .btn { 
+            width:100%; 
+            padding:10px; 
+            background:darkgray; 
+            color:#fff; 
+            border:none; 
+            border-radius:3px; 
+            cursor:pointer; 
+            font-weight:bold;
+        }
+        .btn:hover { background:lightgreen; }
+        
+        .ft { text-align:center; 
+            padding:30px; 
+            background:#2c3e50; 
+            color:#fff; 
+            margin-top:50px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="hd">
+        <img src="logo.png" alt="Logo" class="lgimg">
+        <div class="hc">
+            <div class="lg">Citizen Support System</div>
+            <div class="tt">Your Community Platform</div>
+        </div>
+    </div>
+    
+    <main class="ct">
+        <div class="regform">
+            <h2>Register / Login</h2>
+            <hr>
+            <form name="regform" onsubmit="return chkform(event)" method="post">
+                <div class="fg">
+                    <label for="name">User Name:</label>
+                    <input type="text" id="name" placeholder="Enter user name">
+                    <div id="nerr" class="err"></div>
+                </div>
+
+                <div class="fg">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="Enter email">
+                    <div id="eerr" class="err"></div>
+                </div>
+
+                <div class="fg">
+                    <label for="mobile">Mobile:</label>
+                    <input type="text" id="mobile" placeholder="Enter mobile">
+                    <div id="merr" class="err"></div>
+                </div>
+
+                <div class="fg">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="text" id="dob" placeholder="dd/mm/yyyy">
+                    <div id="derr" class="err"></div>
+                </div>
+
+                <div class="fg">
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass" placeholder="Enter password">
+                    <div id="perr" class="err"></div>
+                </div>
+
+                <div class="fg">
+                    <label for="cpass">Confirm Password:</label>
+                    <input type="password" id="cpass" placeholder="Confirm password">
+                    <div id="cperr" class="err"></div>
+                </div>
+
+                <button type="submit" class="btn" >Submit</button>
+            </form>
+        </div>
+    </main>
+    
+    <div class="ft">
+        <p>&copy; 2025 Citizen Support System with copyrights</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<html>
+<head>
+    <title>Dashboard - Citizen Support</title>
+    <script>
+        window.onload = function() {
+            const usrname = localStorage.getItem('usrname');
+            if(usrname) {
+                document.querySelector('.usrprf h3').textContent = usrname;
+            }
+        };
+        function opnregi() {
+            window.location.href="4.report.html";
+        }
+        function askfnc(){
+            var t = confirm("Are you want to logout?");
+
+            if(t){
+                window.location.href="1.html";
+            }
+        }
+    </script>
+    <style>
+        *{ margin:0; 
+            padding:0; 
+            font-family:Arial, sans-serif; 
+        }
+        body{ background:#e7e7e9; }
+        
+        .ct{ max-width:1000px; 
+            margin:0 auto; 
+            padding:20px; 
+        }
+        .hd{ 
+            background:#2d3e4f; 
+            color:#fff; 
+            padding:15px 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .lgimg {
+            height: 60px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .lg{ font-size:24px; font-weight:bold; }
+    
+        .dshbrd{
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .sdbr {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .usrprf {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .menu{
+            list-style: none;
+        }
+        .menu li{
+            margin-bottom: 10px;
+        }
+        .menu a{
+            display: block;
+            padding: 8px 10px;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .menu a:hover, .menu a.active {
+            background: #f0f0f0;
+            color: #2d3e4f;
+        }
+        
+        .mncnt {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .rptbtn {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgb(35, 101, 172);
+            color: white;
+            border-radius: 8px;
+        }
+        .rptbtn h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #2c3e50;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #f1f1f1;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .news{
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .news h2{
+            color: #2d3e4f;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .nesitm {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .nesitm:last-child {
+            border-bottom: none;
+        }
+        .nesitm h3 {
+            color: #2d3e4f;
+            margin-bottom: 5px;
+        }
+        .nesdt {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .rctrprt {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .rctrprt h2 {
+            color: #2d3e4f;
+            margin-bottom: 15px;
+        }
+        .rprtcrd {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .rprtcrd:last-child {
+            border-bottom: none;
+        }
+        .rprtimg {
+            width: 100px;
+            height: 100px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        .rptinfo h3 {
+            color: #2d3e4f;
+            margin-bottom: 5px;
+        }
+        .rptstat {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .statpen {
+            background: #f39c12;
+            color: white;
+        }
+        .statsol {
+            background: #27ae60;
+            color: white;
+        }
+        .ft {
+            text-align: center;
+            padding: 20px;
+            background: #2d3e4f;
+            color: white;
+            margin-top: 40px;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hd">
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <img src="logo.png" alt="Logo" class="lgimg">
+            <div class="lg">Citizen Support System</div>
+        </div>
+        <div class="nav">
+            <a href="3.html">Home</a>
+            <a href="7.myrep.html">Reports</a>
+            <a href="6.news.html">News</a>
+            <a href="5.myacc.html">My Account</a>
+        </div>
+    </div>
+    
+    <div class="ct">
+        <div class="dshbrd">
+            <div class="sdbr">
+                <div class="usrprf">
+                    <h3 style="color: #2d3e4f;">username</h3>
+                    <br>
+                    <p style="color:gray">Registered Citizen</p>
+                </div>
+                <ul class="menu">
+                    <li><a href="3.html" class="active">Dashboard</a></li>
+                    <li><a href="7.myrep.html">My Reports</a></li>
+                    <li><a href="4.report.html">Submit New Report</a></li>
+                    <li><a href="5.myacc.html">Account Settings</a></li>
+                    <li><a href="">Help & Support</a></li>
+                    <li><a href="#" onclick="askfnc()">Logout</a></li>
+                </ul>
+            </div>
+            <div class="mncnt">
+                <div class="rptbtn">
+                    <h1>Report Government Issues</h1>
+                    <p>Help improve public services by reporting deficiencies in your community</p>
+                    <br>
+                    <a href="#" class="btn" onclick="opnregi()">Submit Report</a>
+                </div>
+                
+                <div class="news">
+                    <h2>Recent Updates & News</h2>
+                    <div class="nesitm">
+                        <h3>New Online Reporting System Launched</h3>
+                        <div class="nesdt">feb 2, 2025</div>
+                        <p>We're excited to announce our new digital platform for citizen reports. Now you can track your report status in real-time.</p>
+                    </div>
+                    <div class="nesitm">
+                        <h3>City Repairs 150+ Potholes This Month</h3>
+                        <div class="nesdt">Jan 10, 2025</div>
+                        <p>Thanks to your reports, the city has repaired over 150 potholes in the last 30 days, making our roads safer.</p>
+                    </div>
+                    <div class="nesitm">
+                        <h3>Water Supply Issues Resolved</h3>
+                        <div class="nesdt">Jan 28, 2025</div>
+                        <p>All reported water supply issues in the downtown area have been resolved after the main pipeline repair.</p>
+                    </div>
+                </div>
+                
+                <div class="rctrprt">
+                    <h2>Recent Reports</h2>
+                    <div class="rprtcrd">
+                        <img src="airp.png" alt="Report" class="rprtimg">
+                        <div class="rptinfo">
+                            <h3>Pothole on Airport Road</h3>
+                            <p>Submitted: Jan 12, 2025</p>
+                            <span class="rptstat statsol">Resolved</span>
+                            <p>The large pothole near the Airport circle in ahmedabad has been filled.</p>
+                        </div>
+                    </div>
+                    <div class="rprtcrd">
+                        <img src="garb.jpeg" alt="Report" class="rprtimg">
+                        <div class="rptinfo">
+                            <h3>Garbage Not Collected</h3>
+                            <p>Submitted: Jan 18, 2025</p>
+                            <span class="rptstat statpen">In Progress</span>
+                            <p>Sanitation department has been notified and will collect soon at Maninagar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ft">
+        <p>&copy; 2025 Citizen Support System with copyrights</p>
+    </div>
+</body>
+</html>
